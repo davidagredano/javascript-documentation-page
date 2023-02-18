@@ -1,51 +1,301 @@
-* :not(code) {
-  font-family: sans-serif;
-  box-sizing: border-box;
+/* CSS custom properties */
+:root {
+  --color-background-primary: white;
+  --color-background-secondary: whitesmoke;
+  --color-background-tertiary: #ddd;
+  --color-background-highlight: #0069c220;
+  --color-text: #222;
+  --color-gray: #555;
+  --color-grayish: #858585;
+  --color-blue: #3366cc;
+  --color-red: #d30038;
+  --color-green: #007936;
+
+  --font-family: "Open Sans", Arial, sans-serif;
+  --border: 1px solid DarkGray;
+  scroll-behavior: smooth;
 }
 
-#navbar {
+/* BEM Mixes */
+.text--blue {
+  color: var(--color-blue);
+}
+
+.text--red {
+  color: var(--color-red);
+}
+
+.text--green {
+  color: var(--color-green);
+}
+
+.text--gray {
+  color: var(--color-grayish);
+}
+
+/* CSS Styling - BEM Methodology */
+.l-body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.l-header {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 1rem 0 1.5rem;
   position: fixed;
-  top: 8px;
-  left: 0px;
-  width: 30%;
-  padding: 10px 0px 10px 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 0;
+  width: 100%;
+  height: 3rem;
+  background-color: var(--color-background-primary);
+  border-bottom: var(--border);
+  font-family: var(--font-family);
+  color: var(--color-text);
   z-index: 1;
 }
 
-#navbar li {
-  list-style-type: none;
+.header__heading {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 2rem;
+}
+
+.header__hamburger-menu {
+  z-index: 1;
+  position: fixed;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  line-height: 21px;
+  font-size: 22px;
+  color: #555;
+  background-color: var(--color-background-primary);
+  border-width: 0;
+  visibility: hidden;
+}
+
+.header__hamburger-menu:hover {
+  background-color: var(--color-background-tertiary);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.l-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 2.5rem 2.5rem;
+  width: calc(100% - 220px);
   position: relative;
+  left: 0px;
   top: 0;
-  left: -40px;
 }
 
-header {
-  font-weight: bold;
+.main-section {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  font-family: var(--font-family);
+  color: var(--color-text);
+  line-height: 1.5;
 }
 
-#main-doc {
-  width: 70%;
-  position: relative;
-  left: 30%;
-  padding: 10px 30px;
+.main-section__heading {
+  box-sizing: border-box;
+  margin: 4.25rem 0 0 0;
+  padding: 0;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 2rem;
 }
 
-@media screen and (max-width: 800px) {
-  #navbar {
-    position: fixed;
-    top: 0px;
-    left: 0px;
+.main-section__text-block {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 0 0 1rem;
+  font-size: 0.9rem;
+}
+
+.main-section__list {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 0 0 3rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.main-section__list--inner {
+  box-sizing: border-box;
+  margin: 1rem 0 0;
+  padding: 0 0 0 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.main-section__list-item {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+.main-section__code-block {
+  box-sizing: border-box;
+  margin: 0 0.5rem 0 1rem;
+  padding: 1rem;
+  background-color: var(--color-background-secondary);
+  border-radius: 4px;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  color: var(--color-gray);
+}
+
+.main-section__inline-code {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0.125rem 0.25rem;
+  background-color: var(--color-background-secondary);
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  color: var(--color-gray);
+}
+
+.main-section__link {
+  color: var(--color-blue);
+  text-decoration: underline;
+}
+
+.main-section__link:hover {
+  text-decoration: none;
+}
+
+.l-nav {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 3rem;
+  right: 0;
+  width: 220px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.75rem;
+  font-family: var(--font-family);
+  transition: right 0.2s ease;
+}
+
+.nav__heading {
+  box-sizing: border-box;
+  margin: 1rem 0 0 0;
+  padding: 0;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 2rem;
+  color: var(--color-text);
+}
+
+.nav__list {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0;
+  border-left: var(--border);
+  font-size: 0.8rem;
+}
+
+.nav__list-item {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 0 0 1rem;
+  list-style-type: none;
+  line-height: 2rem;
+}
+
+.nav__list-item--highlight {
+  background-color: var(--color-background-highlight);
+  border-left: 1px solid var(--color-blue);
+  margin-left: -1px;
+}
+
+.nav__link {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.nav__link:hover {
+  color: var(--color-blue);
+  text-decoration: none;
+}
+
+/* Big monitors (>1329px) */
+@media screen and (min-width: 1329px) {
+  .l-main {
+    position: relative;
+    left: calc((100vw - 1328px) / 2);
+    max-width: calc(1328px - 250px);
+  }
+
+  .l-nav,
+  .l-nav--active {
+    right: calc((100vw - 1328px) / 2);
+  }
+}
+
+/* Tablet and mobile (0-768px) */
+@media screen and (max-width: 768px) {
+  .l-main {
     width: 100%;
-    padding: 10px 0px 10px 30px;
-    background-color: white;
+  }
+
+  .header__hamburger-menu {
+    visibility: visible;
+  }
+
+  .l-nav {
+    padding-left: 1rem;
+    right: calc(-220px - 1rem);
+    width: calc(220px + 1rem);
+    background-color: var(--color-background-primary);
+    border-left: var(--border);
+    transition: right 0.2s ease;
     z-index: 1;
   }
 
-  #main-doc {
-    width: 100%;
-    position: relative;
-    left: 0;
-    top: 230px;
-    padding: 10px 30px;
+  .l-nav--active {
+    right: 0;
+  }
+
+  .nav__heading {
+    padding-left: 0.2rem;
+  }
+
+  .nav__list {
+    border-left: unset;
   }
 }
