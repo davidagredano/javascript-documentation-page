@@ -73,15 +73,17 @@
 .header__hamburger-menu {
   z-index: 1;
   position: fixed;
+  padding: 0;
   top: 0.5rem;
   right: 0.5rem;
   width: 2rem;
   height: 2rem;
-  line-height: 21px;
-  font-size: 22px;
+  line-height: 2rem;
+  vertical-align: center;
+  text-align: center;
   color: #555;
   background-color: var(--color-background-primary);
-  border-width: 0;
+  border-width: 0px;
   visibility: hidden;
 }
 
