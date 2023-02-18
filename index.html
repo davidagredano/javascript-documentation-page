@@ -377,23 +377,25 @@
             <span class="text--green">5</span>; <br />
             } <br />
             console.<span class="text--red">log</span>(x);
-            <span class="text--gray">// x is 5</span>
+            <span class="text--gray">// 5</span>
           </code>
         </div>
         <p class="main-section__text-block">
-          This behavior changes, when using the let declaration introduced in
-          ECMAScript 2015.
+          This behavior changes, when using the
+          <code class="main-section__inline-code">const</code> and
+          <code class="main-section__inline-code">let</code> declarations
+          introduced in ECMAScript 2015.
         </p>
         <div class="main-section__code-block">
           <code class="main-section__code-text">
             <span class="text--blue">if</span> (<span class="text--green"
               >true</span
             >) { <br />
-            &nbsp <span class="text--blue">let</span> y =
+            &nbsp <span class="text--blue">const</span> x =
             <span class="text--green">5</span>; <br />
             } <br />
             console.<span class="text--red">log</span>(x);
-            <span class="text--gray">// ReferenceError: y is not defined</span>
+            <span class="text--gray">// ReferenceError: x is not defined</span>
           </code>
         </div>
       </section>
