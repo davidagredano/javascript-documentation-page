@@ -1,6 +1,4 @@
-<base target="_blank">
-
-# [JavaScript Documentation Page](https://davidagredano.github.io/javascript-documentation-page/)
+# <a href="https://davidagredano.github.io/javascript-documentation-page/" target="_blank">JavaScript Documentation Page</a>
 
 This web development project was a personal project aimed at building a complete website in HTML, CSS, and JavaScript.
 
