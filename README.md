@@ -15,8 +15,7 @@ This web development project was a personal project aimed at building a complete
 - CSS
 - JavaScript
 - BEM Methodology
-- Prettier
-
+  
 ## Contact Me
 
 Hello! 👋 I'm David, the creator of this project. If you have any questions, suggestions, or just want to chat about web development or anything else related to this project, feel free to reach out to me.
